@@ -1,31 +1,41 @@
-﻿using System.Text.Json.Nodes;
+﻿Console.WriteLine(MultiplyToNumbers(0, 0));
 
-int[] sortedArray = { 1,1,1,2,2,2,2,4,4,5,6,7,8,8 };
-int newLength = sortedArray.Count();
-Console.WriteLine("The original array "+string.Join(',',sortedArray)+" its length: "+ sortedArray.Count());
-
-int newLenght = sortedArray.NewArrayLenghtAfterremovingDuplicates();
-
-Console.WriteLine("The new Array is " + string.Join(',',string.Join(',', sortedArray).Split(','),0,newLenght) + " is: " + newLenght);
-
-public static class ArrayExtention
+int MultiplyToNumbers(int operationsToDo, int valueToMultiply)
 {
-    public static int NewArrayLenghtAfterremovingDuplicates(this int[] sortedArray)
+    int result = 0;
+    if (operationsToDo == 0 || valueToMultiply == 0)
+        return 0;
+
+    if (Math.Abs(operationsToDo) > 1)
     {
-        if (sortedArray.Count() == 0)
-            return 0;
-
-        int newIndex = 1;
-
-        for (int i = 1; i < sortedArray.Count(); i++)
-        {
-            if (sortedArray[i] != sortedArray[i - 1])
-            {
-                sortedArray[newIndex] = sortedArray[i];
-                newIndex++;
-            }
-        }
-
-        return newIndex;
+        result += MultiplyToNumbers(operationsToDo < 0 ? operationsToDo + 1 : operationsToDo - 1, valueToMultiply);
     }
+    else
+    {
+        return valueToMultiply;
+    }
+
+
+    if ((valueToMultiply < 0 && operationsToDo < 0) || (valueToMultiply > 0 && operationsToDo > 0))
+    {
+        return Math.Abs(result) + Math.Abs(valueToMultiply);
+    }
+    else
+    {
+        if (valueToMultiply < 0)
+        {
+            return result - Math.Abs(valueToMultiply);
+        }
+        else
+        {
+            if (result > 0)
+                return (-1 * result) - valueToMultiply;
+            else
+                return result - valueToMultiply;
+
+
+        }
+    }
+
+
 }
