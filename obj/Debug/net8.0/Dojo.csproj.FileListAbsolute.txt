@@ -1,0 +1,15 @@
+C:\Users\gustavo.alzate\source\repos\Dojo\bin\Debug\net8.0\Dojo.exe
+C:\Users\gustavo.alzate\source\repos\Dojo\bin\Debug\net8.0\Dojo.deps.json
+C:\Users\gustavo.alzate\source\repos\Dojo\bin\Debug\net8.0\Dojo.runtimeconfig.json
+C:\Users\gustavo.alzate\source\repos\Dojo\bin\Debug\net8.0\Dojo.dll
+C:\Users\gustavo.alzate\source\repos\Dojo\bin\Debug\net8.0\Dojo.pdb
+C:\Users\gustavo.alzate\source\repos\Dojo\obj\Debug\net8.0\Dojo.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\gustavo.alzate\source\repos\Dojo\obj\Debug\net8.0\Dojo.AssemblyInfoInputs.cache
+C:\Users\gustavo.alzate\source\repos\Dojo\obj\Debug\net8.0\Dojo.AssemblyInfo.cs
+C:\Users\gustavo.alzate\source\repos\Dojo\obj\Debug\net8.0\Dojo.csproj.CoreCompileInputs.cache
+C:\Users\gustavo.alzate\source\repos\Dojo\obj\Debug\net8.0\Dojo.sourcelink.json
+C:\Users\gustavo.alzate\source\repos\Dojo\obj\Debug\net8.0\Dojo.dll
+C:\Users\gustavo.alzate\source\repos\Dojo\obj\Debug\net8.0\refint\Dojo.dll
+C:\Users\gustavo.alzate\source\repos\Dojo\obj\Debug\net8.0\Dojo.pdb
+C:\Users\gustavo.alzate\source\repos\Dojo\obj\Debug\net8.0\Dojo.genruntimeconfig.cache
+C:\Users\gustavo.alzate\source\repos\Dojo\obj\Debug\net8.0\ref\Dojo.dll
