@@ -1,31 +1,51 @@
-﻿using System.Text.Json.Nodes;
+﻿/*
+ * A phrase is considered a palindrome if, after converting all characters into lowercase and removing all non-alphanumeric characters, 
+ * it reads the same forward and backward. Alphanumeric characters include letters and numbers.
+ * Write a function isPalindrome that takes a string s as input and returns true if it is a palindrome, or false otherwise.. 
+ */
 
-int[] sortedArray = { 1,1,1,2,2,2,2,4,4,5,6,7,8,8 };
-int newLength = sortedArray.Count();
-Console.WriteLine("The original array "+string.Join(',',sortedArray)+" its length: "+ sortedArray.Count());
+using System.Security.Cryptography.X509Certificates;
+using System.Text.Json;
 
-int newLenght = sortedArray.NewArrayLenghtAfterremovingDuplicates();
 
-Console.WriteLine("The new Array is " + string.Join(',',string.Join(',', sortedArray).Split(','),0,newLenght) + " is: " + newLenght);
+string texto1 = "Anita Lava La Tina";
+Console.WriteLine(texto1+" "+(texto1.IsPalindrome() ? " Is Palindrome":"Is Not Palindrome"));
 
-public static class ArrayExtention
+string texto2 = "Anita$Lava#La=Tina";
+Console.WriteLine(texto2 + " " + (texto2.IsPalindrome() ? " Is Palindrome" : "Is Not Palindrome"));
+
+string texto3 = "Pepito no LAva la TiNa";
+Console.WriteLine(texto3 + " " + (texto3.IsPalindrome() ? " Is Palindrome" : "Is Not Palindrome"));
+
+string texto4 = "   abC * 123 -- 321cBA  ";
+Console.WriteLine(texto4 + " " + (texto4.IsPalindrome() ? " Is Palindrome" : "Is Not Palindrome"));
+
+
+public static class Palindrome
 {
-    public static int NewArrayLenghtAfterremovingDuplicates(this int[] sortedArray)
-    {
-        if (sortedArray.Count() == 0)
-            return 0;
+    
+    public static bool IsPalindrome(this string text)
+    { 
+        Queue<char> startToEnd = new Queue<char>();
+        Stack<char> endToStart = new Stack<char>();
 
-        int newIndex = 1;
-
-        for (int i = 1; i < sortedArray.Count(); i++)
+        foreach (char c in text)
         {
-            if (sortedArray[i] != sortedArray[i - 1])
+            if (Char.IsLetter(c) || Char.IsDigit(c))
             {
-                sortedArray[newIndex] = sortedArray[i];
-                newIndex++;
+                startToEnd.Enqueue(c);
+                endToStart.Push(c);
+            }    
+        }
+
+        while (startToEnd.Count > 0)
+        {
+            if(startToEnd.Dequeue() != endToStart.Pop())
+            {
+                return false;
             }
         }
 
-        return newIndex;
+        return true;
     }
 }
